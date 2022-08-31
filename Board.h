@@ -14,14 +14,14 @@ class Piece;
 class Board
 {
 public:
-	Board(Player*, Player*);
+	Board(Player* player1, Player* player2); /// What will this do
 	~Board();
 	void print() const;
-	void getString(char res[]) const;
+	void getString(char res[]) const; ///fix
 	bool isPieceOfPlayer(int row, int col, Player* pl) const;
 	bool tryMove(int srcRow, int srcCol, int dstRow, int dstCol) const;
 	Piece** getBoard() const;
-	void Move(int srcRow, int srcCol, int dstRow, int dstCol) ;
+	void Move(int srcRow, int srcCol, int dstRow, int dstCol) ; ///check if works
 	void undoLastMove();
 
 private:

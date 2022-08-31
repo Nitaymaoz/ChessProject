@@ -1,3 +1,6 @@
-//
-// Created by nitay on 31/08/2022.
-//
+#include "Rook.h"
+using namespace std;
+
+Rook::Rook(Player * pl,char sign, int row, int col, Board * brd): Piece(pl,sign,row,col,brd) {}
+
+

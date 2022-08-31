@@ -25,4 +25,6 @@ add_executable(ChessProject
         Source.cpp
         stdafx.cpp
         stdafx.h
-        targetver.h)
+        targetver.h
+        Board.cpp Rook.cpp)
+
