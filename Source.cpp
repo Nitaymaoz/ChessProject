@@ -48,11 +48,26 @@ int main()
 //	mgr.playGame();
 //
 //	p.close();
-    std::cout<<"worked"<<endl;
+
     Player* whitepl = new Player(true);
     Player* blackpl = new Player(false);
     Board* B = new Board(whitepl,blackpl);
     B->print();
+
+
+
+
+//    if (B->tryMove(7, 0, 7, 1))
+//    {
+//        B->Move(7, 0, 7, 1);
+//        B->print();
+//    }
+    cout << " " << endl;
+
+	return 0;
+
+
+                                                            ///Knight check
     if (B->tryMove(0,1,2,0)) {
         B->Move(0, 1, 2, 0);
     }
@@ -73,13 +88,23 @@ int main()
     }
     cout << " " << endl;
     B->print();
-//    if (B->tryMove(7, 0, 7, 1))
-//    {
-//        B->Move(7, 0, 7, 1);
-//        B->print();
-//    }
-    cout << " " << endl;
 
-	return 0;
 
+                                                            // bishop check
+    if (B->tryMove(0,2,5,7)) {
+        B->Move(0, 2, 5, 7);
+        cout << " " << endl;
+        B->print();
+    }
+    if (B->tryMove(5,7,7,5)) {
+        B->Move(5, 7, 7, 5);
+        cout << " " << endl;
+        B->print();
+    }
+    if (B->tryMove(7,0,6,0)) {
+        B->Move(7, 0, 6, 0);
+        B->Move(6, 0, 6, 4);
+        cout << " " << endl;
+        B->print();
+    }
 }
