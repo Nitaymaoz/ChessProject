@@ -13,7 +13,7 @@
 
 using namespace std;
 
-Board::Board(Player * player1, Player * player2):_lastPiece(nullptr), moveCount(0){
+Board::Board(Player * player1, Player * player2):_lastPiece(nullptr), moveCount(1),_movedPiece(nullptr){
     if (!player1->isWhite()){
         ///black player top - player 1
         _brd[0][0]=(Piece*) new Rook(player1,'r',0,0,this);
@@ -122,7 +122,6 @@ void Board::Move(int srcRow, int srcCol, int dstRow, int dstCol) {
     if (_lastPiece != nullptr)
         delete _lastPiece;
 
-
     _lastPiece = _brd[dstRow][dstCol];
     _lastSrcRow = srcRow;
     _lastSrcCol = srcCol;
@@ -132,6 +131,7 @@ void Board::Move(int srcRow, int srcCol, int dstRow, int dstCol) {
     _brd[dstRow][dstCol]=_brd[srcRow][srcCol];
     _brd[srcRow][srcCol] = new NullPiece(srcRow, srcCol); ///check if inner location changed
     std::cout<<endl; std::cout<< "move: " << moveCount++ <<endl;  /// count moves - test purposes
+    _movedPiece=_brd[dstRow][dstCol];
 }
 
 void Board::undoLastMove() {
@@ -143,4 +143,11 @@ void Board::undoLastMove() {
     _brd[_lastSrcRow][_lastSrcCol]->setPosition(_lastSrcRow,_lastSrcCol); //set inner location
     _brd[_lastDstRow][_lastDstCol]=_lastPiece;  // replace the last piece
     _lastPiece= nullptr;
+    _movedPiece= nullptr;
 }
+
+Piece *Board::getMovedPiece() {
+    return _movedPiece;
+}
+
+

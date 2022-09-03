@@ -2,6 +2,7 @@
 #include "Manager.h"
 #include <iostream>
 #include <thread>
+#include "King.h"
 
 using namespace std;
 
@@ -54,18 +55,40 @@ int main()
     Board* B = new Board(whitepl,blackpl);
     B->print();
 
-
-
-
-//    if (B->tryMove(7, 0, 7, 1))
-//    {
-//        B->Move(7, 0, 7, 1);
-//        B->print();
-//    }
-    cout << " " << endl;
-
 	return 0;
 
+                                                        ///check King
+    if (B->tryMove(0,4,1,5)) {
+        B->Move(0, 4, 1, 5);
+        cout << " " << endl;
+        B->print();
+    }
+    if (B->tryMove(1,5,1,6)) {
+        B->Move(1, 5, 1, 6);
+        cout << " " << endl;
+        B->print();
+    }
+    if (B->tryMove(1,6,1,7)) {
+        B->Move(1, 6, 1, 7);
+        cout << " " << endl;
+        B->print();
+    }
+    if (whitepl->getKing()->isChess())
+        cout << "Chess on White" << endl;
+    if (blackpl->getKing()->isChess())
+        cout << "Chess on Black" << endl;
+                                                            ///check Queen
+    if (B->tryMove(0,3,7,3)) {
+        B->Move(0, 3, 7, 3);
+        cout << " " << endl;
+        B->print();
+    }
+    if (B->tryMove(7,3,7,4)) {
+        B->Move(7, 3, 7, 4);
+        cout << " " << endl;
+        B->print();
+    }
+    cout << " " << endl;
 
                                                             ///Knight check
     if (B->tryMove(0,1,2,0)) {

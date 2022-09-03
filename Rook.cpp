@@ -6,8 +6,7 @@ Rook::Rook(Player *pl, char sign, int row, int col, Board *brd) : Piece(pl, 'r',
 
 bool Rook::isLegalMove(int row, int col) const {
     if (this->isWayFree(col, row)) {
-        if ((this->_col == col || this->_row == row) && (_brd->getBoard()[row][col].getSign() == '#' ||
-                                                         _brd->getBoard()[row][col].getPlayer() != this->getPlayer()))
+        if (this->_col == col || this->_row == row)
             return true;
     }
     return false;

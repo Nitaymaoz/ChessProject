@@ -23,6 +23,7 @@ public:
 	Piece** getBoard() const;
 	void Move(int srcRow, int srcCol, int dstRow, int dstCol) ; ///check if works
 	void undoLastMove();
+    Piece* getMovedPiece();
 
 private:
 	Piece* _brd[BOARD_SIZE][BOARD_SIZE];
@@ -32,5 +33,6 @@ private:
 	int _lastDstRow;
 	int _lastDstCol;
 	Piece* _lastPiece;
+    Piece* _movedPiece;
     int moveCount;
 };
