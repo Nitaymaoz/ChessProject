@@ -77,13 +77,6 @@ build CMakeFiles/ChessProject.dir/Player.cpp.obj: CXX_COMPILER__ChessProject_Deb
   OBJECT_DIR = CMakeFiles\ChessProject.dir
   OBJECT_FILE_DIR = CMakeFiles\ChessProject.dir
 
-build CMakeFiles/ChessProject.dir/Source.cpp.obj: CXX_COMPILER__ChessProject_Debug C$:/Users/nitay/Desktop/Nitay/Magshimim/Chess$ Exrcise/ChessProject/Source.cpp || cmake_object_order_depends_target_ChessProject
-  DEP_FILE = CMakeFiles\ChessProject.dir\Source.cpp.obj.d
-  FLAGS = -g -std=gnu++14
-  INCLUDES = -I"C:/Users/nitay/Desktop/Nitay/Magshimim/Chess Exrcise/ChessProject/."
-  OBJECT_DIR = CMakeFiles\ChessProject.dir
-  OBJECT_FILE_DIR = CMakeFiles\ChessProject.dir
-
 build CMakeFiles/ChessProject.dir/stdafx.cpp.obj: CXX_COMPILER__ChessProject_Debug C$:/Users/nitay/Desktop/Nitay/Magshimim/Chess$ Exrcise/ChessProject/stdafx.cpp || cmake_object_order_depends_target_ChessProject
   DEP_FILE = CMakeFiles\ChessProject.dir\stdafx.cpp.obj.d
   FLAGS = -g -std=gnu++14
@@ -105,6 +98,48 @@ build CMakeFiles/ChessProject.dir/Rook.cpp.obj: CXX_COMPILER__ChessProject_Debug
   OBJECT_DIR = CMakeFiles\ChessProject.dir
   OBJECT_FILE_DIR = CMakeFiles\ChessProject.dir
 
+build CMakeFiles/ChessProject.dir/Knight.cpp.obj: CXX_COMPILER__ChessProject_Debug C$:/Users/nitay/Desktop/Nitay/Magshimim/Chess$ Exrcise/ChessProject/Knight.cpp || cmake_object_order_depends_target_ChessProject
+  DEP_FILE = CMakeFiles\ChessProject.dir\Knight.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  INCLUDES = -I"C:/Users/nitay/Desktop/Nitay/Magshimim/Chess Exrcise/ChessProject/."
+  OBJECT_DIR = CMakeFiles\ChessProject.dir
+  OBJECT_FILE_DIR = CMakeFiles\ChessProject.dir
+
+build CMakeFiles/ChessProject.dir/Bishop.cpp.obj: CXX_COMPILER__ChessProject_Debug C$:/Users/nitay/Desktop/Nitay/Magshimim/Chess$ Exrcise/ChessProject/Bishop.cpp || cmake_object_order_depends_target_ChessProject
+  DEP_FILE = CMakeFiles\ChessProject.dir\Bishop.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  INCLUDES = -I"C:/Users/nitay/Desktop/Nitay/Magshimim/Chess Exrcise/ChessProject/."
+  OBJECT_DIR = CMakeFiles\ChessProject.dir
+  OBJECT_FILE_DIR = CMakeFiles\ChessProject.dir
+
+build CMakeFiles/ChessProject.dir/Queen.cpp.obj: CXX_COMPILER__ChessProject_Debug C$:/Users/nitay/Desktop/Nitay/Magshimim/Chess$ Exrcise/ChessProject/Queen.cpp || cmake_object_order_depends_target_ChessProject
+  DEP_FILE = CMakeFiles\ChessProject.dir\Queen.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  INCLUDES = -I"C:/Users/nitay/Desktop/Nitay/Magshimim/Chess Exrcise/ChessProject/."
+  OBJECT_DIR = CMakeFiles\ChessProject.dir
+  OBJECT_FILE_DIR = CMakeFiles\ChessProject.dir
+
+build CMakeFiles/ChessProject.dir/King.cpp.obj: CXX_COMPILER__ChessProject_Debug C$:/Users/nitay/Desktop/Nitay/Magshimim/Chess$ Exrcise/ChessProject/King.cpp || cmake_object_order_depends_target_ChessProject
+  DEP_FILE = CMakeFiles\ChessProject.dir\King.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  INCLUDES = -I"C:/Users/nitay/Desktop/Nitay/Magshimim/Chess Exrcise/ChessProject/."
+  OBJECT_DIR = CMakeFiles\ChessProject.dir
+  OBJECT_FILE_DIR = CMakeFiles\ChessProject.dir
+
+build CMakeFiles/ChessProject.dir/Pawn.cpp.obj: CXX_COMPILER__ChessProject_Debug C$:/Users/nitay/Desktop/Nitay/Magshimim/Chess$ Exrcise/ChessProject/Pawn.cpp || cmake_object_order_depends_target_ChessProject
+  DEP_FILE = CMakeFiles\ChessProject.dir\Pawn.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  INCLUDES = -I"C:/Users/nitay/Desktop/Nitay/Magshimim/Chess Exrcise/ChessProject/."
+  OBJECT_DIR = CMakeFiles\ChessProject.dir
+  OBJECT_FILE_DIR = CMakeFiles\ChessProject.dir
+
+build CMakeFiles/ChessProject.dir/Source.cpp.obj: CXX_COMPILER__ChessProject_Debug C$:/Users/nitay/Desktop/Nitay/Magshimim/Chess$ Exrcise/ChessProject/Source.cpp || cmake_object_order_depends_target_ChessProject
+  DEP_FILE = CMakeFiles\ChessProject.dir\Source.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  INCLUDES = -I"C:/Users/nitay/Desktop/Nitay/Magshimim/Chess Exrcise/ChessProject/."
+  OBJECT_DIR = CMakeFiles\ChessProject.dir
+  OBJECT_FILE_DIR = CMakeFiles\ChessProject.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target ChessProject
@@ -113,7 +148,7 @@ build CMakeFiles/ChessProject.dir/Rook.cpp.obj: CXX_COMPILER__ChessProject_Debug
 #############################################
 # Link the executable ChessProject.exe
 
-build ChessProject.exe: CXX_EXECUTABLE_LINKER__ChessProject_Debug CMakeFiles/ChessProject.dir/Manager.cpp.obj CMakeFiles/ChessProject.dir/NullPiece.cpp.obj CMakeFiles/ChessProject.dir/Piece.cpp.obj CMakeFiles/ChessProject.dir/Player.cpp.obj CMakeFiles/ChessProject.dir/Source.cpp.obj CMakeFiles/ChessProject.dir/stdafx.cpp.obj CMakeFiles/ChessProject.dir/Board.cpp.obj CMakeFiles/ChessProject.dir/Rook.cpp.obj
+build ChessProject.exe: CXX_EXECUTABLE_LINKER__ChessProject_Debug CMakeFiles/ChessProject.dir/Manager.cpp.obj CMakeFiles/ChessProject.dir/NullPiece.cpp.obj CMakeFiles/ChessProject.dir/Piece.cpp.obj CMakeFiles/ChessProject.dir/Player.cpp.obj CMakeFiles/ChessProject.dir/stdafx.cpp.obj CMakeFiles/ChessProject.dir/Board.cpp.obj CMakeFiles/ChessProject.dir/Rook.cpp.obj CMakeFiles/ChessProject.dir/Knight.cpp.obj CMakeFiles/ChessProject.dir/Bishop.cpp.obj CMakeFiles/ChessProject.dir/Queen.cpp.obj CMakeFiles/ChessProject.dir/King.cpp.obj CMakeFiles/ChessProject.dir/Pawn.cpp.obj CMakeFiles/ChessProject.dir/Source.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\ChessProject.dir

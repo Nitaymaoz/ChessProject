@@ -22,9 +22,9 @@ add_executable(ChessProject
         Player.h
         Queen.h
         Rook.h
-        Source.cpp
         stdafx.cpp
         stdafx.h
         targetver.h
-        Board.cpp Rook.cpp)
+        Board.cpp Rook.cpp Knight.cpp Bishop.cpp Queen.cpp King.cpp Pawn.cpp
+        Source.cpp)
 

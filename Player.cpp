@@ -8,7 +8,7 @@ Player::Player(bool isWhite) : Player(isWhite, isWhite ? false : true)
 Player::Player(bool isWhite, bool isUp) 
 {
 	_isWhite = isWhite;
-	_myKing = NULL;
+	_myKing = nullptr;
 	_isGoingUp = isUp;
 }
 Player::~Player()

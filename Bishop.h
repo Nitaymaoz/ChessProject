@@ -5,7 +5,7 @@
 class Bishop : public Piece
 {
 public:
-	Bishop(Player*, int row, int col, Board*);
+	Bishop(Player*, char sign,int row, int col, Board*);
 	virtual bool isLegalMove(int, int) const;
 
 private:

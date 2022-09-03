@@ -5,7 +5,7 @@
 class Pawn : public Piece
 {
 public:
-	Pawn(Player*, int row, int col, Board*);
+	Pawn(Player*, char sign,int row, int col, Board*);
 
 	virtual bool isLegalMove(int, int) const;
 private:

@@ -14,7 +14,64 @@
 using namespace std;
 
 Board::Board(Player * player1, Player * player2){
-    _brd[0][0]= new Rook(player1,0,0,*_brd);
+    if (!player1->isWhite()){
+        ///black player top - player 1
+        _brd[0][0]= new Rook(player1,'r',0,0,this);
+        _brd[0][7]= new Knight(player1,'r',0,7,this);
+        _brd[0][1]= new Knight(player1,'n',0,1,this);
+        _brd[0][6]= new Knight(player1,'n',0,6,this);
+        _brd[0][2]= new Bishop(player1,'b',0,2,this);
+        _brd[0][5]= new Bishop(player1,'b',0,5,this);
+        _brd[0][3]= new Queen(player1,'q',0,3,this);
+        player1->setKing(new King(player1,'k',0,4,this));
+        _brd[0][4]=player1->getKing();
+
+
+        ///white player at bottom - player 2
+        _brd[7][0]= new Rook(player2,'R',7,0,this);
+        _brd[7][7]= new Knight(player2,'R',7,7,this);
+        _brd[7][1]= new Knight(player2,'N',7,1,this);
+        _brd[7][6]= new Knight(player2,'N',7,6,this);
+        _brd[7][2]= new Bishop(player2,'B',7,2,this);
+        _brd[7][5]= new Bishop(player2,'B',7,5,this);
+        _brd[7][3]= new Queen(player2,'Q',7,3,this);
+        player2->setKing(new King(player2,'k',7,4,this));
+        _brd[7][4]= player2->getKing();
+    }
+    else{
+        ///black player top - player 2
+        _brd[0][0]= new Rook(player2,'r',0,0,this);
+        _brd[0][7]= new Knight(player2,'r',0,7,this);
+        _brd[0][1]= new Knight(player2,'n',0,1,this);
+        _brd[0][6]= new Knight(player2,'n',0,6,this);
+        _brd[0][2]= new Bishop(player2,'b',0,2,this);
+        _brd[0][5]= new Bishop(player2,'b',0,5,this);
+        _brd[0][3]= new Queen(player2,'q',0,3,this);
+        player2->setKing(new King(player2,'k',0,4,this));
+        _brd[0][4]=player2->getKing();
+
+        ///white player at bottom - player 1
+        _brd[7][0]= new Rook(player1,'R',7,0,this);
+        _brd[7][7]= new Knight(player1,'R',7,7,this);
+        _brd[7][1]= new Knight(player1,'N',7,1,this);
+        _brd[7][6]= new Knight(player1,'N',7,6,this);
+        _brd[7][2]= new Bishop(player1,'B',7,2,this);
+        _brd[7][5]= new Bishop(player1,'B',7,5,this);
+        _brd[7][3]= new Queen(player1,'Q',7,3,this);
+        player1->setKing(new King(player1,'k',7,4,this));
+        _brd[7][4]= player1->getKing();
+    }
+    ///Empty spaces
+    for (int i = 2; i < 6; ++i) {
+        for (int j = 0; j < 8; ++j) {
+            _brd[i][j]=new NullPiece (i,j);
+        }
+    }
+
+    ///need to add pawns.
+
+
+
 }
 
 Board::~Board() {
