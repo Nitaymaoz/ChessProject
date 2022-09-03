@@ -49,10 +49,37 @@ int main()
 //
 //	p.close();
     std::cout<<"worked"<<endl;
-    Player whitepl = new Player(true);
-    Player blackpl = new Player(false);
-    Board* B = new Board(&whitepl,&blackpl);
+    Player* whitepl = new Player(true);
+    Player* blackpl = new Player(false);
+    Board* B = new Board(whitepl,blackpl);
     B->print();
+    if (B->tryMove(0,1,2,0)) {
+        B->Move(0, 1, 2, 0);
+    }
+    cout << " " << endl;
+    B->print();
+    if (B->tryMove(2,0,3,2)) {
+        B->Move(2, 0, 3, 2);
+    }
+    cout << " " << endl;
+    B->print();
+    if (B->tryMove(3,2,5,1)) {
+        B->Move(3, 2, 5, 1);
+    }
+    cout << " " << endl;
+    B->print();
+    if (B->tryMove(5,1,7,2)) {
+        B->Move(5, 1, 7, 2);
+    }
+    cout << " " << endl;
+    B->print();
+//    if (B->tryMove(7, 0, 7, 1))
+//    {
+//        B->Move(7, 0, 7, 1);
+//        B->print();
+//    }
+    cout << " " << endl;
+
 	return 0;
 
 }

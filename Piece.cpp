@@ -55,6 +55,7 @@ bool Piece::isWayFree(int dstRow, int dstCol) const
 			// if there is player that own the piece
 			if (currPiece->getPlayer() != NULL)
 			{
+                cout<<"Illegal move"<<endl;
 				return false;
 			}
 		}

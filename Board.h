@@ -32,4 +32,5 @@ private:
 	int _lastDstRow;
 	int _lastDstCol;
 	Piece* _lastPiece;
+    int moveCount;
 };
