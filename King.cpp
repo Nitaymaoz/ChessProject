@@ -13,7 +13,7 @@ bool King::isChess() {
         for (int j = 0; j < 8; j++)
         {
             currPiece = *(matBoard + i * BOARD_SIZE + j);
-            if ((currPiece->getSign() == '#') ||(currPiece->getPlayer()) == _player)
+            if ((currPiece->getSign() == '#') || (currPiece->getPlayer()) == _player)
                 continue;
             if (currPiece->isLegalMove(this->_row, this->_col))
                 return true;

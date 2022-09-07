@@ -37,6 +37,16 @@ Board::Board(Player * player1, Player * player2):_lastPiece(nullptr), moveCount(
         _brd[7][3]=(Piece*) new Queen(player2,'Q',7,3,this);
         player2->setKing(new King(player2,'k',7,4,this));
         _brd[7][4]=(Piece*) player2->getKing();
+
+
+        ///pawns
+        for (int i = 0; i < 7; ++i) {
+            _brd[1][i]=(Piece*) new Pawn(player1,'p',1,i,this);
+        }
+        for (int i = 0; i < 7; ++i) {
+            _brd[6][i]=(Piece*) new Pawn(player2,'P',6,i,this);
+        }
+
     }
     else{
         ///black player top - player 2
@@ -60,9 +70,18 @@ Board::Board(Player * player1, Player * player2):_lastPiece(nullptr), moveCount(
         _brd[7][3]=(Piece*) new Queen(player1,'Q',7,3,this);
         player1->setKing(new King(player1,'k',7,4,this));
         _brd[7][4]=(Piece*) player1->getKing();
+
+        ///pawns
+        for (int i = 0; i < 8; ++i) {
+            _brd[1][i]=(Piece*) new Pawn(player2,'p',1,i,this);
+        }
+        for (int i = 0; i < 8; ++i) {
+            _brd[6][i]=(Piece*) new Pawn(player1,'P',6,i,this);
+        }
     }
+
     ///Empty spaces - add pawns in rows 1 and 7
-    for (int i = 1; i < 7; ++i) {
+    for (int i = 2; i < 6; ++i) {
         for (int j = 0; j < 8; ++j) {
             _brd[i][j]=new NullPiece (i,j);
         }
@@ -131,7 +150,12 @@ void Board::Move(int srcRow, int srcCol, int dstRow, int dstCol) {
     _lastDstCol = dstCol;
     _brd[srcRow][srcCol]->setPosition(dstRow,dstCol);
     _brd[dstRow][dstCol]=_brd[srcRow][srcCol];
-    _brd[srcRow][srcCol] = new NullPiece(srcRow, srcCol); ///check if inner location changed
+    _brd[srcRow][srcCol] = new NullPiece(srcRow, srcCol);
+
+    if (_brd[dstRow][dstCol]->getSign()=='P' ||_brd[dstRow][dstCol]->getSign()=='p'){
+        Pawn* pawn = dynamic_cast<Pawn*>(_brd[dstRow][dstCol]);
+        pawn->setFirstStep();                                                         ///cancel 2 steps after first move
+    }
     std::cout<<endl; std::cout<< "move: " << moveCount++ <<endl;  /// count moves - test purposes
 }
 

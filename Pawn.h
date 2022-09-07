@@ -8,5 +8,7 @@ public:
 	Pawn(Player*, char sign,int row, int col, Board*);
 
 	virtual bool isLegalMove(int, int) const;
+    void setFirstStep();
 private:
+    bool firststep;
 };
