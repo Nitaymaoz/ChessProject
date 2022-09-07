@@ -13,11 +13,11 @@
 
 using namespace std;
 
-Board::Board(Player * player1, Player * player2):_lastPiece(nullptr), moveCount(1),_movedPiece(nullptr){
+Board::Board(Player * player1, Player * player2):_lastPiece(nullptr), moveCount(1){
     if (!player1->isWhite()){
         ///black player top - player 1
         _brd[0][0]=(Piece*) new Rook(player1,'r',0,0,this);
-        _brd[0][7]=(Piece*) new Knight(player1,'r',0,7,this);
+        _brd[0][7]=(Piece*) new Rook(player1,'r',0,7,this);
         _brd[0][1]=(Piece*) new Knight(player1,'n',0,1,this);
         _brd[0][6]=(Piece*) new Knight(player1,'n',0,6,this);
         _brd[0][2]=(Piece*) new Bishop(player1,'b',0,2,this);
@@ -29,7 +29,7 @@ Board::Board(Player * player1, Player * player2):_lastPiece(nullptr), moveCount(
 
         ///white player at bottom - player 2
         _brd[7][0]= (Piece*)new Rook(player2,'R',7,0,this);
-        _brd[7][7]=(Piece*) new Knight(player2,'R',7,7,this);
+        _brd[7][7]=(Piece*) new Rook(player2,'R',7,7,this);
         _brd[7][1]=(Piece*) new Knight(player2,'N',7,1,this);
         _brd[7][6]=(Piece*) new Knight(player2,'N',7,6,this);
         _brd[7][2]=(Piece*) new Bishop(player2,'B',7,2,this);
@@ -41,7 +41,7 @@ Board::Board(Player * player1, Player * player2):_lastPiece(nullptr), moveCount(
     else{
         ///black player top - player 2
         _brd[0][0]=(Piece*) new Rook(player2,'r',0,0,this);
-        _brd[0][7]=(Piece*) new Knight(player2,'r',0,7,this);
+        _brd[0][7]=(Piece*) new Rook(player2,'r',0,7,this);
         _brd[0][1]=(Piece*) new Knight(player2,'n',0,1,this);
         _brd[0][6]=(Piece*) new Knight(player2,'n',0,6,this);
         _brd[0][2]=(Piece*) new Bishop(player2,'b',0,2,this);
@@ -52,7 +52,7 @@ Board::Board(Player * player1, Player * player2):_lastPiece(nullptr), moveCount(
 
         ///white player at bottom - player 1
         _brd[7][0]= (Piece*)new Rook(player1,'R',7,0,this);
-        _brd[7][7]=(Piece*) new Knight(player1,'R',7,7,this);
+        _brd[7][7]=(Piece*) new Rook(player1,'R',7,7,this);
         _brd[7][1]=(Piece*) new Knight(player1,'N',7,1,this);
         _brd[7][6]=(Piece*) new Knight(player1,'N',7,6,this);
         _brd[7][2]=(Piece*) new Bishop(player1,'B',7,2,this);
@@ -102,7 +102,9 @@ void Board::getString(char *res) const{
 }
 
 bool Board::isPieceOfPlayer(int row, int col, Player *pl) const {
-    if (pl->isWhite() && _brd[row][col]->getPlayer()->isWhite())
+    if (_brd[row][col]->getPlayer()== nullptr)
+        return false;
+    else if (pl->isWhite() && _brd[row][col]->getPlayer()->isWhite())
         return true;
     else if (!pl->isWhite() && !_brd[row][col]->getPlayer()->isWhite())
             return true;
@@ -131,7 +133,6 @@ void Board::Move(int srcRow, int srcCol, int dstRow, int dstCol) {
     _brd[dstRow][dstCol]=_brd[srcRow][srcCol];
     _brd[srcRow][srcCol] = new NullPiece(srcRow, srcCol); ///check if inner location changed
     std::cout<<endl; std::cout<< "move: " << moveCount++ <<endl;  /// count moves - test purposes
-    _movedPiece=_brd[dstRow][dstCol];
 }
 
 void Board::undoLastMove() {
@@ -143,11 +144,10 @@ void Board::undoLastMove() {
     _brd[_lastSrcRow][_lastSrcCol]->setPosition(_lastSrcRow,_lastSrcCol); //set inner location
     _brd[_lastDstRow][_lastDstCol]=_lastPiece;  // replace the last piece
     _lastPiece= nullptr;
-    _movedPiece= nullptr;
 }
 
-Piece *Board::getMovedPiece() {
-    return _movedPiece;
-}
+
+
+
 
 

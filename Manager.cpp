@@ -51,7 +51,7 @@ int Manager::playMove(string move)
 	int dstRow = BOARD_SIZE -  (move[3] - '0');
 	int dstCol = move[2] - 'a';
 
-	cout << "Move from: " << srcRow << ", " << srcCol << "To " << dstRow << ", " << dstCol << endl;
+	cout << "Move from: " << srcRow << ", " << srcCol << " To " << dstRow << ", " << dstCol << endl;
 	
 	if (srcRow < 0 || srcRow >= BOARD_SIZE ||
 		srcCol < 0 || srcCol >= BOARD_SIZE ||

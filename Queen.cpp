@@ -11,5 +11,4 @@ bool Queen::isLegalMove(int row, int col) const {
         else if ((this->_col == col || this->_row == row)) return true;
         return false;
     }
-
 }
